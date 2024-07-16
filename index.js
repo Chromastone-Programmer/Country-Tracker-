@@ -4,7 +4,7 @@ import pg from "pg";
 import env from "dotenv";
 
 const app = express();
-const port = 3000;
+const port = process.env.C_Port||3000;
 const dotenv = env.config();
 
 const db = new pg.Client({
@@ -108,3 +108,4 @@ app.post("/new", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+go
